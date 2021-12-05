@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        button{
+            width:50px;
+            height:50px;
+            font-size:30px;
+            margin-top:5px;
+        }
+        #visor{
+            background-color: black;
+            color: #fff;
+            font-size: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            width: 200px;
+            height: 50px;
+            text-align: right;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+
+            var visor=document.querySelector("#visor");
+            var btnIgual=document.querySelector("#btnig");
+            var btnLimpa=document.querySelector("#btnLimp");
+            var oper="";
+            var v1=0;
+            var v2=0;
+            var resultado=0;
+           
+            for(var b of document.querySelectorAll(".btnNum")){
+                b.addEventListener("click",function(){
+                    visor.value+=this.innerHTML;
+                });
+            }
+
+            for(var boper of document.querySelectorAll(".btnOper")){
+                boper.addEventListener("click",function(){
+                    oper=this.innerHTML;
+                    v1=parseFloat(visor.value);
+                    visor.value="";
+                });
+            }
+
+            btnIgual.addEventListener("click",function(){
+                v2=parseFloat(visor.value);
+                resultado=eval(v1+oper+v2);
+                visor.value=resultado;
+            });
+            
+            btnLimpa.addEventListener("click", function(){
+                v1=0;
+                v2=0;
+                visor.value="";
+                resultado=0;
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <input type="text" name="visor" id="visor">
+    <br>
+    <button type="button" name="btnLimp" id="btnLimp">C</button>
+    <button type="button" name="btnr" id="btnr" class="btnNum">$</button>
+    <button type="button" name="btns" id="btns" class="btnNum">%</button>
+
+    <button type="button" name="btnmais" id="btnmais" class="btnOper">+</button>
+
+    <br>
+    <button type="button" name="btn1" id="btn1" class="btnNum">1</button>
+    <button type="button" name="btn2" id="btn2" class="btnNum">2</button>
+    <button type="button" name="btn3" id="btn3" class="btnNum">3</button>
+    <button type="button" name="btnmenos" id="btnmenos" class="btnOper">-</button>
+    <br>
+    <button type="button" name="btn4" id="btn4" class="btnNum">4</button>
+    <button type="button" name="btn5" id="btn5" class="btnNum">5</button>
+    <button type="button" name="btn6" id="btn6" class="btnNum">6</button>
+    <button type="button" name="btnmultiplicacao" id="btnmultiplicacao" class="btnOper">*</button>
+
+
+    <br>
+    <button type="button" name="btn7" id="btn7" class="btnNum">7</button>
+    <button type="button" name="btn8" id="btn8" class="btnNum">8</button>
+    <button type="button" name="btn9" id="btn9" class="btnNum">9</button>
+    <button type="button" name="btndivisao" id="btndivisao" class="btnOper">/</button>
+
+
+    <br>
+    <button type="button" name="btn0" id="btn0" class="btnNum">0</button>
+    <button type="button" name="btnponto" id="btnponto" class="btnNum">.</button>
+    <button type="button" name="btnw" id="btnw" class="btnOper">o.o</button>
+
+    <button type="button" name="btnig" id="btnig">=</button>
+</body>
+</html>

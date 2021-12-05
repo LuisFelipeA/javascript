@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronometro</title>
+
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+
+            var iniciar=document.querySelector("#iniciar");
+            var parar=document.querySelector("#parar")
+            var cronometro = ""
+
+            iniciar.addEventListener("click",function(){
+            
+                var timer = 0
+                cronometro = setInterval(function(){
+
+                timer++
+
+                    document.querySelector("#timer").innerHTML=timer
+                }, 1000);
+            });
+
+            parar.addEventListener("click",function(){
+
+                clearInterval(cronometro);
+
+
+            });
+        });
+    </script>
+    
+</head>
+<body>
+    
+    <h1>Tempo</h1>
+    <p id="timer"></p>
+    <button type="button" name="iniciar" id="iniciar">Iniciar</button>
+    <button type="button" name="parar" id="parar">Parar</button>
+
+    
+    
+</body>
+</html>

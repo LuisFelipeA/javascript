@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de cliente</title>
+
+    <script>
+        document.addEventListener("DOMContendLoaded",function(){
+            var lista=[];
+
+            function addItem(){
+                var cliente=document.querySelector("#txtcliente").value;
+                var idade=document.querySelector("#txtidade").value;
+                var obj = {"cliente": cliente, "idade":idade};
+                lista.push(obj);
+                console.log(lista);
+            }
+
+            function mostrarlista(){
+                for (var i=0;i<lista.length;i++){
+                    console.log(mostrarlista[i]);
+                }                
+            }
+
+            var botaoadd=document.querySelector("#botaoadd");
+                botaoadd.addEventListener("click", addItem);
+
+        });
+    </script>
+</head>
+<body>
+    <h1> Lista de clientes</h1>
+    <label>Nome</label>
+    <input type="text" name="txtcliente" id="txtcliente">
+    <br>
+
+    <label>Idade</label>
+    <input type="text" name="txtidade" id="txtidade">
+    <br>
+
+    <button type="button" name="botaoadd" id="botaoadd">Incluir</button>
+    <button type="button" name="botaolista" id="botaolista">Listar</button>
+
+    
+</body>
+</html>
