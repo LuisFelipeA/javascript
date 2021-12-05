@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faixa Etária</title>
+</head>
+<body>
+    <!-- 1) Crie uma aplicação capaz de identificar a faixa etária com base na idade informada pelo
+    usuário. Considere os seguintes critérios:
+    Se a idade informada for maior ou igual a 0 e menor que 13, exibir a mensagem “Criança”.
+    Se a idade informada for maior ou igual a 13 e menor que 18, exibir a mensagem “Jovem”.
+    Se a idade informada for maior ou igual a 18 e menor que 60, exibir a mensagem “Adulto”.
+    Se a idade informada for maior ou igual a 60, exibir a mensagem “Idoso”.
+    Fique à vontade para utilizar qualquer uma das funções aprendidas para exibição de dados
+    para o usuário. -->
+    <script>
+        var idade = prompt("Digite a idade:")
+
+        if (idade >= 0 && idade <13){
+            document.write("Criança")
+        }
+        else if (idade >= 13 && idade <18){
+            document.write("Jovem")
+        }
+        else if (idade >= 18 && idade <60){
+            document.write("Adulto")
+        }
+        else{
+            document.write("Idoso")
+        }
+
+    </script>
+        
+</body>
+</html>
